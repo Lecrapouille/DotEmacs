@@ -28,24 +28,21 @@
     (* (max steps 1)
        c-basic-offset)))
 
-(defun kernel-style ()
-  (setq indent-tabs-mode t)
-  (whitespace-mode)
-  (c-set-style "linux-tabs-only"))
-
-(defun google-style ()
+(defun google-c-style ()
+  (print "I'm now using the Google C style")
   (setq indent-tabs-mode nil)
   (whitespace-mode)
   (google-set-c-style)
   (setq c-basic-offset 4))
 
-(defun renesas-style ()
+(defun kernel-c-style ()
+  (print "I'm now using the kernel C style")
   (setq indent-tabs-mode t)
-  (setq tab-width 4)
   (whitespace-mode)
   (c-set-style "linux-tabs-only"))
 
-(defun lecrapouille-style()
+(defun qq-c-style()
+  (print "I'm now using the QQ C style")
   (setq c-indent-level 4)
   (setq c-continued-statement-offset 4)
   (setq c-brace-offset 4)
@@ -62,6 +59,9 @@
 (defun match-path (path)
   (string-match (expand-file-name path) filename))
 
+(defun match-partial-path (path)
+  (string-match path filename))
+
 (defun find-code-style ()
   (when (buffer-file-name)
     (let ((filename (file-truename (buffer-file-name))))
@@ -72,34 +72,17 @@
 
  ;; Define your project
  ;;      ((match-path "~/home/john/doe/myproject1")
- ;;       (kernel-style))
+ ;;       (kernel-c-style))
 
  ;;      ((match-path "~/myproject2")
- ;;       (android-style))
+ ;;       (android-c-style))
 
        ((match-path "~/SimTaDyn")
-        (lecrapouille-style))
+        (lecrapouille-c-style))
 
        (t (lecrapouille-style))))))
 
-(defun add-kernel-style ()
-  (c-add-style "linux-tabs-only"
-   '("linux" (c-offsets-alist
-              (arglist-cont-nonempty
-               c-lineup-gcc-asm-reg
-               c-lineup-arglist-tabs-only)))))
-
-(defun add-lecrapouille-style ()
-  (c-add-style "lecrapouille"
-   '("gnu" (c-offsets-alist
-            (arglist-cont-nonempty
-             c-lineup-gcc-asm-reg
-             c-lineup-arglist-tabs-only)))))
-
 (add-hook 'c-mode-common-hook 'find-code-style)
-(add-hook 'c-mode-common-hook 'add-kernel-style)
-(add-hook 'c-mode-common-hook 'add-parrot-style)
-(add-hook 'c-mode-common-hook 'add-lecrapouille-style)
 
 ;; Display function name in status-line
 (which-function-mode 1)

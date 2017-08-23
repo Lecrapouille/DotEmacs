@@ -5,7 +5,7 @@
 ;; Login   <fred@epita.fr>
 ;;
 ;; Started on  Thu Sep  9 23:34:05 1993 Frederic Denis
-;; Last update Tue Apr 15 16:19:00 2014 John Doe
+;; Last update Wed Aug 23 21:31:52 2017 Quentin QUADRAT
 ;;
 ;; Based on Comment routines by Isaac
 ;;
@@ -115,8 +115,7 @@
   (let ((projname "toto")(location "/Users/Doe"))
     (setq projname (read-from-minibuffer
                     (format "Type project name (RETURN to quit) : ")))
-    (setq location (car (last (split-string (getenv "PWD") "/home/qDoe/"))))
-;    (setq location (getenv "PWD"))
+    (setq location (file-name-directory buffer-file-name))
 
     (insert-string (std-get 'cs))
     (newline)
@@ -244,4 +243,3 @@
           '(lambda ()
              (define-key tex-mode-map ""
                'comment-region)))
-

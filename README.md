@@ -1,32 +1,57 @@
 # DotEmacs
 
-My Emacs 25 config based on the .emacs of a co-worker who loves evil mode. Because, I never use evil, I commented parts concerning this mode.
+My Emacs 25 config based on the co-worker's work.
 
-I removed the '.' to emacs file and emacs.d folder for easier edition. Do not forget to rename them as .emacs and .emacs.d if you want to try them.
+Note: In the git project I removed the '.' in the file name '.emacs' and also in the directory name '.emacs.d' for simplifying the edition. But if you want to use my Emacs config, please do not forget to rename them as '.emacs' and '.emacs.d' and place them in your home directory.
 
 # How to use this .emacs ?
 
-Do not call emacs directly, it's very boring for waiting loading the .emacs everytimes you open a new emacs.
+###### Step 1: backup your emacs config (if you have one)
 
-Here is the trick:
+```sh
+mv ~/.emacs ~/OLD.emacs
+mv ~/.emacs.d ~/OLD.emacs.d
+```
 
-* call once emacs server when your Linux session has started:
+###### Step 2: copy the new .emacs
+
+```sh
+git clone https://github.com/Lecrapouille/DotEmacs.git
+mv DotEmacs/emacs ~/.emacs
+mv DotEmacs/emacs.d ~/.emacs.d
+```
+
+###### Step 3: Configure your emacs
+
+You can modify the following files:
+* .emacs.d/init.el: this file is entry point of the emacs config. It is splited into two parts. The first part allows to add your desired ELPA packages (they are automaticly downloaded and updated). The second part is for loading .el files located in the .emacs.d/conf/ directory.
+* .emacs.d/conf/c.el: this file manages several C style identation. Define here your own C style and include your project path which will launch your desired C style when you open a C file on it. By default it will my C style (based on the GNU style).
+* .emacs.d/conf/epita.el: this file generates an header file for several languages (C, java, OCaml, Lisp ...). Type Ctl-c Ctrl-h for generating the header. But before, you have to find and replace John and Doe words by your first and last name.
+* .emacs.d/conf/evil.el and .emacs.d/conf/evil-cursors.el For people who like Evil mode. The initial project used a lot Evil shortcuts. I personally do not use this mode, so I tried to group evils stuffs in these two files in which I commented in the init.el. You can uncomment these lines in the .emacs.d/init.el file to get them.
+
+###### Step 4: launch Emacs
+
+Do not call emacs directly, it's very boring to waiting for it loading the .emacs everytimes you open a new emacs.
+
+Do this trick:
+
+* call once the emacs server when your Linux session has started:
 ```sh
 emacs-25.1 --daemon
 ```
 
-It will load your .emacs. You have to do it once by session.
-Note: The first time you call it (after cloning this git project), Emacs will download the elpa packages and update them after. So, do not worry if the first time, Emacs takes very very long time for starting !
+It will load for once your .emacs. You have to do it once by session.
 
-* Once the deamon has started. Call your emacs client:
+Note: The first time you call it (after cloning this git project), Emacs will download some ELPA packages (in .emacs.d/elpa/. So, do not worry if for the very first time, Emacs takes very very long time for starting, it will start faster later !
+
+* Once the deamon has started. Call an emacs client (call as many as you wish):
 ```sh
 emacsclient -nc
 ```
-An Emacs window appears very quickly. Call this command for each new window you want to open.
+An Emacs window will appear very quickly. Call this command for each new window you want to open.
 
-* If the Emacs daemon crashes, kill it and start it again.
-
+* If after some work, your Emacs starts bugging, save your current work, kill the Emacs server and start it again:
 ```sh
-pkill emacs
+pkill emacs-25.1
 emacs-25.1 --daemon
 ```
