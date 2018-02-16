@@ -6,14 +6,22 @@ Note: In the git project I removed the '.' in the file name '.emacs' and also in
 
 # How to use this .emacs ?
 
-###### Step 1: backup your emacs config (if you have one)
+###### Step 1: prerequisite
+
+* Install or compile Emacs >= 25.
+* For C developpers, install gtags:
+```sh
+sudo apt-get install globals
+```
+
+###### Step 2: backup your emacs config (if you have one)
 
 ```sh
 mv ~/.emacs ~/OLD.emacs
 mv ~/.emacs.d ~/OLD.emacs.d
 ```
 
-###### Step 2: copy the new .emacs
+###### Step 3: copy the new .emacs
 
 ```sh
 git clone https://github.com/Lecrapouille/DotEmacs.git
@@ -21,7 +29,7 @@ mv DotEmacs/emacs ~/.emacs
 mv DotEmacs/emacs.d ~/.emacs.d
 ```
 
-###### Step 3: Configure your emacs
+###### Step 4: Configure your emacs
 
 You can modify the following files:
 * .emacs.d/init.el: this file is entry point of the emacs config. It is splited into two parts. The first part allows to add your desired ELPA packages (they are automaticly downloaded and updated). The second part is for loading .el files located in the .emacs.d/conf/ directory.
@@ -29,7 +37,7 @@ You can modify the following files:
 * .emacs.d/conf/epita.el: this file generates an header file for several languages (C, java, OCaml, Lisp ...). Type Ctl-c Ctrl-h for generating the header. But before, you have to find and replace John and Doe words by your first and last name.
 * .emacs.d/conf/evil.el and .emacs.d/conf/evil-cursors.el For people who like Evil mode. The initial project used a lot Evil shortcuts. I personally do not use this mode, so I tried to group evils stuffs in these two files in which I commented in the init.el. You can uncomment these lines in the .emacs.d/init.el file to get them.
 
-###### Step 4: launch Emacs
+###### Step 5: launch Emacs
 
 Do not call emacs directly, it's very boring to waiting for it loading the .emacs everytimes you open a new emacs.
 
