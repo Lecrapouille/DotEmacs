@@ -63,3 +63,8 @@ An Emacs window will appear very quickly. Call this command for each new window 
 pkill emacs-25.1
 emacs-25.1 --daemon
 ```
+# Known bugs
+
+Help is welcome:
+* iedit-mode is not working well when GTAGS have been created (iedit allows to edit multiple regions simulteanously. My binder is the F11 key).
+* copy-paste with the mouse is broken.
