@@ -34,7 +34,7 @@
       custom-file "~/.emacs.d/conf/custom.el"
       pdf-misc-print-programm lpr-command
       ag-highlight-search t
-      irfc-assoc-mode t
+      ;;irfc-assoc-mode t
       nsm-settings-file "~/.emacs.d/conf/network-security.data")
 
 ;; Display undo/redo as a graphical tree
@@ -43,7 +43,7 @@
 (global-auto-revert-mode)
 ;; (pdf-tools-install)
 ;; RFC documents
-(require 'irfc)
+;;(require 'irfc)
 
 (add-hook 'after-make-frame-functions 'disable-scrollbars)
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)

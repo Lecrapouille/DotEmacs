@@ -41,7 +41,7 @@
   (whitespace-mode)
   (c-set-style "linux-tabs-only"))
 
-(defun qq-c-style()
+(defun lecrapouille-c-style()
   (print "I'm now using the QQ C style")
   (setq c-indent-level 4)
   (setq c-continued-statement-offset 4)
@@ -70,17 +70,18 @@
        ((match-in-list filename parrot-old-style-list)
         (parrot-old-style))
 
- ;; Define your project
- ;;      ((match-path "~/home/john/doe/myproject1")
+ ;; Define your coding style for eachs projects of yours. Some examples are given here
+ ;;      ((match-path "~/home/john/doe/myLinuxKernelproject")
  ;;       (kernel-c-style))
 
- ;;      ((match-path "~/myproject2")
+ ;;      ((match-path "~/myAndroidProject")
  ;;       (android-c-style))
 
-       ((match-path "~/SimTaDyn")
+ ;; Lecrapouille's coding style
+       ((match-partial-path "SimTaDyn")
         (lecrapouille-c-style))
 
-       (t (lecrapouille-style))))))
+       (t (lecrapouille-c-style))))))
 
 (add-hook 'c-mode-common-hook 'find-code-style)
 

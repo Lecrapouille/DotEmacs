@@ -1,0 +1,46 @@
+;;-*-coding: emacs-mule;-*-
+(define-abbrev-table 'doctex-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'tex-shell-abbrev-table '(
+    ))
+
+(define-abbrev-table 'slitex-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'latex-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'plain-tex-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'tex-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'shell-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'gdb-script-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'gud-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'comint-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'ruby-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'text-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'lisp-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'fundamental-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'global-abbrev-table '(
+    ))
+

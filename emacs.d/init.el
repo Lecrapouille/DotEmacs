@@ -23,7 +23,7 @@
    fic-mode
    ggtags
    hackernews
-   irfc
+   ;;irfc
    jabber
    nhexl-mode
    pass
@@ -39,7 +39,7 @@
    flx-ido
    ido-ubiquitous
    smex
-   header2
+   ;;header2
    ))
 
 ;; Call .el file
