@@ -37,9 +37,10 @@
    google-c-style
    rainbow-delimiters
    flx-ido
-   ido-ubiquitous
+   ido-completing-read+
    smex
    ;;header2
+   markdown-mode
    ))
 
 ;; Call .el file

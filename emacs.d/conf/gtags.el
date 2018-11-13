@@ -1,5 +1,7 @@
 (add-hook 'c-mode-common-hook 'ggtags-mode)
 
+(setq ggtags-highlight-tag nil)
+
 (setq ggtags-oversize-limit 0
       ggtags-update-on-save t)
 
