@@ -63,6 +63,13 @@ An Emacs window will appear very quickly. Call this command for each new window 
 pkill emacs-25.1
 emacs-25.1 --daemon
 ```
+
+* You can create some aliases. Place this code in your `~/.bashrc` file:
+```sh
+alias emacsc='emacsclient -nc'
+alias emacsd='emacs25 --daemon'
+```
+
 # Known bugs
 
 Help is welcome:

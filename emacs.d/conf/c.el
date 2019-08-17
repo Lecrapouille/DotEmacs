@@ -67,9 +67,6 @@
     (let ((filename (file-truename (buffer-file-name))))
       (cond
 
-       ((match-in-list filename parrot-old-style-list)
-        (parrot-old-style))
-
  ;; Define your coding style for eachs projects of yours. Some examples are given here
  ;;      ((match-path "~/home/john/doe/myLinuxKernelproject")
  ;;       (kernel-c-style))

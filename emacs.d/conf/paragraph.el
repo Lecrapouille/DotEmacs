@@ -15,3 +15,6 @@
         ))))
 
 (setq fill-nobreak-predicate 'my-fill-nobreak-predicate)
+
+;; Prefer to split my C/C++ comments to 80 chars
+(setq-default fill-column 80)
