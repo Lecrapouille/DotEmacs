@@ -8,6 +8,18 @@
 ;; CMAKE
 ;;(cmake-ide-setup)
 
+;; Look in the current directory the Makfile and if not found look in
+;; parents directory
+(setq compile-command
+      '(let ((mf (locate-dominating-file default-directory "Makefile")))
+         (if mf (setq mf (file-name-directory mf)))
+         (concat (if (and mf (not (equal mf default-directory)))
+                     (format "cd %s; "
+                             (shell-quote-argument
+                              (file-relative-name
+                               (directory-file-name mf)))))
+                 "make -j8 ")))
+
 ;; this hook must be put last, otherwise last line does not color well
 ;; ansi color
 (defun colorize-compilation-buffer ()
