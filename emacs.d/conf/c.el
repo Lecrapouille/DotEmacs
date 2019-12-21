@@ -1,3 +1,15 @@
+; Indent multiple files.
+; 1/ Be in dired mode.
+; 2/ Select all desired file (U t)
+; Call this function
+(defun indent-marked-files ()
+  (interactive)
+  (dolist (file (dired-get-marked-files))
+    (find-file file)
+    (indent-region (point-min) (point-max))
+    (save-buffer)
+    (kill-buffer nil)))
+
 (defun format-bt (beg end)
   (defun path-to-link (beg end)
     "Transform a path into a link"
