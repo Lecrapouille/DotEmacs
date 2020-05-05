@@ -1,3 +1,9 @@
+;(require 'clang-format)
+;(add-hook 'c-mode-common-hook
+;          (function (lambda ()
+;                    (add-hook 'before-save-hook
+;                              'clang-format-buffer))))
+
 ; Indent multiple files.
 ; 1/ Be in dired mode.
 ; 2/ Select all desired file (U t)
@@ -47,11 +53,26 @@
   (google-set-c-style)
   (setq c-basic-offset 4))
 
+(defun qq-c-style ()
+  (print "I'm now using the QQ C style")
+  (setq indent-tabs-mode nil)
+  (whitespace-mode)
+  (google-set-c-style)
+  (add-hook 'c-mode-common-hook
+          (function (lambda ()
+                    (add-hook 'before-save-hook
+                              'clang-format-buffer))))
+  (setq c-basic-offset 4)
+  (c-set-offset 'arglist-intro '+)
+  (c-set-offset 'access-label '-) ; public:, protected:, private: labels
+  (c-set-offset 'member-init-intro '+) ; Constructor indent
+  (c-set-offset 'case-label '0)) ; switch case indent
+
 (defun kernel-c-style ()
   (print "I'm now using the kernel C style")
   (setq indent-tabs-mode t)
-  (whitespace-mode)
-  (c-set-style "linux-tabs-only"))
+;  (whitespace-mode)
+  (c-set-style "linux"))
 
 (defun lecrapouille-c-style()
   (print "I'm now using the QQ C style")
@@ -88,9 +109,9 @@
 
  ;; Lecrapouille's coding style
        ((match-partial-path "SimTaDyn")
-        (lecrapouille-c-style))
+        (qq-c-style))
 
-       (t (lecrapouille-c-style))))))
+       (t (qq-c-style))))))
 
 (add-hook 'c-mode-common-hook 'find-code-style)
 

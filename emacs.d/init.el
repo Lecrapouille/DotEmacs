@@ -4,7 +4,8 @@
 
 ;; Add elpa packages here
 (require 'package)
-(package-initialize)
+;;(package-initialize)
+(when (version< emacs-version "27.0") (package-initialize))
 (unless package-archive-contents
   (package-refresh-contents))
 (mapc
@@ -16,7 +17,7 @@
    alect-themes
    bind-map
    dactyl-mode
-   debbugs
+   ;;debbugs
    dockerfile-mode
    eshell-git-prompt
    evil-mc
@@ -42,6 +43,7 @@
    ;;header2
    markdown-mode
    julia-mode
+   ;;clang-format
    ))
 
 ;; Call .el file

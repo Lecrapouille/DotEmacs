@@ -1,7 +1,9 @@
 ;; (bind-map leader-map
 ;;   :keys ("C-SPC"))
 
-(global-set-key (kbd "<f4>") (lambda () (interactive) (shell-command "thunar ."))) ; replace thunar by nautilus for Ubuntu
+; (global-set-key (kbd "<f4>") (lambda () (interactive) (shell-command "nautilus . > /dev/null 2>&1")))
+(global-set-key (kbd "<f4>") (lambda () (interactive) (shell-command "thunar .")))
+
 (global-set-key (kbd "<C-space>") 'set-mark-command)
 (global-set-key (kbd "<C-tab>") 'other-window)          ; Ctrl-Tab = Next buffer
 (global-set-key (kbd "<C-left>") 'windmove-left)        ; move to left windnow
