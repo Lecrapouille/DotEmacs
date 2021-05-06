@@ -1,3 +1,6 @@
+(require 'rtags) ;; optional, must have rtags installed
+(cmake-ide-setup)
+
 ;(require 'clang-format)
 ;(add-hook 'c-mode-common-hook
 ;          (function (lambda ()
@@ -63,6 +66,7 @@
                     (add-hook 'before-save-hook
                               'clang-format-buffer))))
   (setq c-basic-offset 4)
+  (c-set-offset 'innamespace 4)
   (c-set-offset 'arglist-intro '+)
   (c-set-offset 'access-label '-) ; public:, protected:, private: labels
   (c-set-offset 'member-init-intro '+) ; Constructor indent
@@ -75,7 +79,7 @@
   (c-set-style "linux"))
 
 (defun lecrapouille-c-style()
-  (print "I'm now using the QQ C style")
+  (print "I'm now using the lecrapouille C style")
   (setq c-indent-level 4)
   (setq c-continued-statement-offset 4)
   (setq c-brace-offset 4)

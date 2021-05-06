@@ -1,6 +1,6 @@
 # DotEmacs
 
-My Emacs 25 config based on the co-worker's work.
+My Emacs 27 (worked on v25) config based on the co-worker's work.
 
 Note: In the git project I removed the '.' in the file name '.emacs' and also in the directory name '.emacs.d' for simplifying the edition. But if you want to use my Emacs config, please do not forget to rename them as '.emacs' and '.emacs.d' and place them in your home directory.
 

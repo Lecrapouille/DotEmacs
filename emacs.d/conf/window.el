@@ -40,6 +40,7 @@
 ; (load-theme 'alect-black t)
 ; (load-theme 'classic t)
 (load-theme 'subatomic256 t)
+; (load-theme 'nord t)
 (set-face-attribute 'default nil :height 100) ; value in 1/10pt (100 = 10pts)
 
 (when window-system

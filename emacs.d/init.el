@@ -12,9 +12,10 @@
  (lambda (package)
    (unless (package-installed-p package)
      (package-install package)))
- '(subatomic-theme
+ '(;subatomic-theme
    subatomic256-theme
-   alect-themes
+   ;alect-themes
+   ;nord-theme
    bind-map
    dactyl-mode
    ;;debbugs
@@ -44,6 +45,9 @@
    markdown-mode
    julia-mode
    ;;clang-format
+   rtags
+   cmake-ide
+   undo-tree
    ))
 
 ;; Call .el file

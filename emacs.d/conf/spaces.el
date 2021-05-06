@@ -20,7 +20,8 @@
 
 (defun untabify-except-makefiles ()
   "Replace tabs with spaces except in makefiles."
-  (unless (derived-mode-p 'makefile-mode)
+  (message "untabify")
+  (unless (or (derived-mode-p 'makefile-mode) (string-equal 'c-set-style "linux"))
     (untabify (point-min) (point-max))))
 
 (defun remove-ctrlM ()
