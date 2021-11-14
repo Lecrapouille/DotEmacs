@@ -45,6 +45,7 @@
    markdown-mode
    julia-mode
    ;;clang-format
+   git-gutter
    rtags
    cmake-ide
    undo-tree

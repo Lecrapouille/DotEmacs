@@ -52,3 +52,6 @@
 (add-hook 'prog-mode-hook '(lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'prog-mode-hook '(lambda () (unless (string= major-mode "lua-mode")
                                         (modify-syntax-entry ?- "w"))))
+
+;; Show git diff
+(global-git-gutter-mode +1)
